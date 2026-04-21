@@ -9,44 +9,24 @@
 //  Output → -1
 // ➡️ using only conditions
 import 'dart:io';
+import 'dart:math';
 
 void main() {
-  var boundarieX1;
-  var boundarieY1;
-  var boundarieX2;
-  var boundarieY2;
-  bool test = false;
+  var start1;
+  var end1;
   print('Enter the first boundarie then the secund one in order');
-  boundarieX1 = int.parse(stdin.readLineSync()!);
-  boundarieY1 = int.parse(stdin.readLineSync()!);
+  start1 = int.parse(stdin.readLineSync()!);
+  end1 = int.parse(stdin.readLineSync()!);
+  var start2;
+  var end2;
   print('Enter the third boundarie then the forth one in order');
-  boundarieX2 = int.parse(stdin.readLineSync()!);
-  boundarieY2 = int.parse(stdin.readLineSync()!);
-  if (boundarieX1 < boundarieX2 && boundarieX2 < boundarieY1 ||
-      boundarieX2 == boundarieX1 ||
-      boundarieX2 == boundarieY1) {
-    print(boundarieX2);
-    test = true;
-  }
-  if (boundarieX1 > boundarieX2 && boundarieX1 < boundarieY2 ||
-      boundarieX1 == boundarieX2 ||
-      boundarieX1 == boundarieY2) {
-    print(boundarieX1);
-    test = true;
-  }
-  if (boundarieY1 < boundarieY2 && boundarieY1 > boundarieX2 ||
-      boundarieY1 == boundarieY2 ||
-      boundarieY1 == boundarieX2) {
-    print(boundarieY1);
-    test = true;
-  }
-  if (boundarieY2 < boundarieY1 && boundarieY2 > boundarieX1 ||
-      boundarieY2 == boundarieY1 ||
-      boundarieY2 == boundarieX2) {
-    print(boundarieY2);
-    test = true;
-  }
-  if (test != true) {
+  start2 = int.parse(stdin.readLineSync()!);
+  end2 = int.parse(stdin.readLineSync()!);
+  var interceptionPoint1 = max(start1, start2);
+  var interceptionPoint2 = min(end1, end2);
+  if (interceptionPoint1 <= interceptionPoint2) {
+    print('$interceptionPoint1  $interceptionPoint2');
+  } else {
     print(-1);
   }
 }
