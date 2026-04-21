@@ -12,31 +12,25 @@ import 'dart:io';
 void main() {
   var start;
   var end;
-  bool test2 = false;
-  print('Enter start then end of the range');
+  bool test = true;
+  print('Enter start then tne end of the range');
   start = int.parse(stdin.readLineSync()!);
   end = int.parse(stdin.readLineSync()!);
-  for (var i = start; i <= end; i++) {
-    var holder = i;
-    var iLength = 0;
-    while (holder != 0) {
-      holder ~/= 10;
-      iLength++;
-    }
-    bool test = true;
-    for (var j = 0; j < iLength; j++) {
-      var temp = i.toString();
-      if (temp[j] != '7' && temp[j] != '4') {
-        test = false;
+  for (var i = start; i < end; i++) {
+    var holder = i.toString();
+    var found = true;
+    for (var j = 0; j < holder.length; j++) {
+      if (holder[j] != '4' && holder[j] != '7') {
+        found = false;
         break;
       }
     }
-    if (test) {
-      print(i);
-      test2 = true;
+    if (found) {
+      print(holder);
+      test = false;
     }
   }
-  if (test2 != true) {
+  if (test) {
     print(-1);
   }
 }
