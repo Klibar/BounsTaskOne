@@ -8,8 +8,8 @@ import 'dart:io';
 void main() {
   var gNum;
   print('Enter the given number');
-  gNum = stdin.readLineSync()!;
-  for (var i = 0; i < gNum.length; i++) {
-    stdout.write('${gNum[i]} ');
+  gNum = int.parse(stdin.readLineSync()!);
+  for (var i = gNum.toString().length - 1; i >= 0; i--) {
+    stdout.write('${gNum.toString()[i]} ');
   }
 }
