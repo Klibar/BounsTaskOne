@@ -6,7 +6,7 @@
 import 'dart:io';
 
 void main() {
-  var gNum;
+  int gNum;
   print('Enter the given number');
   gNum = int.parse(stdin.readLineSync()!);
   for (var i = gNum.toString().length - 1; i >= 0; i--) {
